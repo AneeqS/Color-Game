@@ -4,6 +4,20 @@ var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
 var colorDisplay = document.querySelector("#colorDisplay");
 var answerDisplay = document.querySelector("#answerDisplay");
+var newButton = document.querySelector("#reset");
+
+newButton.addEventListener("click", function () {
+
+    newButton.textContent = "New Colors?";
+    colors = generateColors(6);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    for(var i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = colors[i];
+    }
+    h1.style.backgroundColor = document.body.style.backgroundColor;
+
+});
 
 colorDisplay.textContent = pickedColor;
 
@@ -17,6 +31,7 @@ for(var i = 0; i < squares.length; i++){
        if(clickedColor === pickedColor){
            answerDisplay.textContent = "Correct!";
            colorChange(clickedColor);
+           newButton.textContent = "Play Again?"
        }else{
            this.style.backgroundColor = document.body.style.backgroundColor;
            answerDisplay.textContent = "Wrong!";
