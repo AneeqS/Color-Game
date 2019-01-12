@@ -8,5 +8,16 @@ var colorDisplay = document.querySelector("#colorDisplay");
 colorDisplay.textContent = pickedColor;
 
 for(var i = 0; i < squares.length; i++){
+    //add colors
     squares[i].style.backgroundColor = colors[i];
+
+    //add listeners
+    squares[i].addEventListener("click", function () {
+       var clickedColor = this.style.backgroundColor;
+       if(clickedColor === pickedColor){
+           alert("Correct");
+       }else{
+           alert("Wrong");
+       }
+    });
 }
