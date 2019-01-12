@@ -17,9 +17,16 @@ for(var i = 0; i < squares.length; i++){
        var clickedColor = this.style.backgroundColor;
        if(clickedColor === pickedColor){
            answerDisplay.textContent = "Correct!";
+           colorChange(clickedColor);
        }else{
            this.style.backgroundColor = document.body.style.backgroundColor;
            answerDisplay.textContent = "Wrong!";
        }
     });
+}
+
+function colorChange(color) {
+    for(var i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = color;
+    }
 }
