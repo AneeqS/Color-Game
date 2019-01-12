@@ -48,6 +48,7 @@ hardButton.addEventListener("click", function () {
 newButton.addEventListener("click", function () {
 
     newButton.textContent = "New Colors?";
+    answerDisplay.textContent = " ";
     colors = generateColors(numSquare);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
@@ -55,6 +56,7 @@ newButton.addEventListener("click", function () {
         squares[i].style.backgroundColor = colors[i];
     }
     h1.style.backgroundColor = "cornflowerblue";
+
 
 });
 
